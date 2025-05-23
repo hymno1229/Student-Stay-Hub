@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_15sdp"
+    android:backgroundTint="#fff"
+    android:clipChildren="false"
+    app:cardCornerRadius="@dimen/_15sdp"
+    tools:context=".RemoveCustomerDialog">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/popupbg"
+        android:clipChildren="false">
+
+        <TextView
+            android:id="@+id/removeCusLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/lato_black"
+            android:text="REMOVE CUSTOMER"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/nameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/kanit_medium"
+            android:text="Customer Name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="@+id/cusmobileValue"
+            app:layout_constraintTop_toBottomOf="@+id/cusmobileValue" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameValue"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/spinnershape"
+            android:fontFamily="@font/lato"
+            android:inputType="number"
+            android:maxLines="1"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/cusmobileValue"
+            app:layout_constraintStart_toStartOf="@+id/nameLabel"
+            app:layout_constraintTop_toBottomOf="@+id/nameLabel" />
+
+        <TextView
+            android:id="@+id/planLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/kanit_medium"
+            android:text="Plan"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="@+id/nameValue"
+            app:layout_constraintTop_toBottomOf="@+id/nameValue" />
+
+        <Spinner
+            android:id="@+id/planSpinner"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/spinnershape"
+            android:dropDownVerticalOffset="@dimen/_40sdp"
+            android:paddingHorizontal="@dimen/_5sdp"
+            app:layout_constraintEnd_toEndOf="@+id/nameValue"
+            app:layout_constraintStart_toStartOf="@+id/planLabel"
+            app:layout_constraintTop_toBottomOf="@+id/planLabel" />
+
+        <ImageView
+            android:id="@+id/dropIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="13dp"
+            android:src="@drawable/drop_down"
+            app:layout_constraintBottom_toBottomOf="@+id/planSpinner"
+            app:layout_constraintEnd_toEndOf="@+id/planSpinner"
+            app:layout_constraintTop_toTopOf="@+id/planSpinner" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cancelBtn"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_secondary"
+            android:fontFamily="@font/kanit_bold"
+            android:text="Cancel"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/removeBtn"
+            app:layout_constraintEnd_toEndOf="@+id/planSpinner"
+            app:layout_constraintTop_toTopOf="@+id/removeBtn" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/removeBtn"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:background="@drawable/button_primary"
+            android:fontFamily="@font/kanit_bold"
+            android:text="Remove"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/planSpinner"
+            app:layout_constraintTop_toBottomOf="@+id/planSpinner" />
+
+        <TextView
+            android:id="@+id/cusMobileLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/kanit_medium"
+            android:text="Mobile Number"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="@+id/cusmobileValue"
+            app:layout_constraintTop_toBottomOf="@+id/removeCusLabel" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cusmobileValue"
+            android:layout_width="300dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:background="@drawable/spinnershape"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cusMobileLabel" />
+
+        <ImageView
+            android:id="@+id/searchIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="13dp"
+            android:src="@drawable/search"
+            app:layout_constraintBottom_toBottomOf="@+id/cusmobileValue"
+            app:layout_constraintEnd_toEndOf="@+id/cusmobileValue"
+            app:layout_constraintTop_toTopOf="@+id/cusmobileValue" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

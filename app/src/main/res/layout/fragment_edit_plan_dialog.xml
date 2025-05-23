@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_15sdp"
+    android:backgroundTint="#fff"
+    android:clipChildren="false"
+    app:cardCornerRadius="@dimen/_15sdp"
+    tools:context=".EditPlanDialog">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/popupbg"
+        android:clipChildren="false">
+
+        <TextView
+            android:id="@+id/editPlanLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/lato_black"
+            android:text="EDIT PLAN"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/planPriceLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/kanit_medium"
+            android:text="Price"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="@+id/planNameValue"
+            app:layout_constraintTop_toBottomOf="@+id/planNameValue" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/planPriceValue"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/spinnershape"
+            android:fontFamily="@font/lato"
+            android:inputType="number"
+            android:maxLines="1"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/planNameValue"
+            app:layout_constraintStart_toStartOf="@+id/planPriceLabel"
+            app:layout_constraintTop_toBottomOf="@+id/planPriceLabel" />
+
+        <TextView
+            android:id="@+id/validityLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/kanit_medium"
+            android:text="Validity"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="@+id/planPriceValue"
+            app:layout_constraintTop_toBottomOf="@+id/planPriceValue" />
+
+        <Spinner
+            android:id="@+id/validityValue"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/spinnershape"
+            android:dropDownVerticalOffset="@dimen/_40sdp"
+            android:paddingHorizontal="@dimen/_5sdp"
+            app:layout_constraintEnd_toEndOf="@+id/planPriceValue"
+            app:layout_constraintStart_toStartOf="@+id/validityLabel"
+            app:layout_constraintTop_toBottomOf="@+id/validityLabel" />
+
+        <ImageView
+            android:id="@+id/dropIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="13dp"
+            android:src="@drawable/drop_down"
+            app:layout_constraintBottom_toBottomOf="@+id/validityValue"
+            app:layout_constraintEnd_toEndOf="@+id/validityValue"
+            app:layout_constraintTop_toTopOf="@+id/validityValue" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cancelBtn"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_secondary"
+            android:fontFamily="@font/kanit_bold"
+            android:text="Cancel"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/updateBtn"
+            app:layout_constraintEnd_toEndOf="@+id/validityValue"
+            app:layout_constraintTop_toTopOf="@+id/updateBtn" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/updateBtn"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:background="@drawable/button_primary"
+            android:fontFamily="@font/kanit_bold"
+            android:text="Update"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/validityValue"
+            app:layout_constraintTop_toBottomOf="@+id/validityValue" />
+
+        <TextView
+            android:id="@+id/planNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/kanit_medium"
+            android:text="Plan Name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toStartOf="@+id/planNameValue"
+            app:layout_constraintTop_toBottomOf="@+id/editPlanLabel" />
+
+        <Spinner
+            android:id="@+id/planNameValue"
+            android:layout_width="300dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:background="@drawable/spinnershape"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/planNameLabel" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/drop_down"
+            android:layout_marginEnd="13dp"
+            app:layout_constraintBottom_toBottomOf="@+id/planNameValue"
+            app:layout_constraintEnd_toEndOf="@+id/planNameValue"
+            app:layout_constraintTop_toTopOf="@+id/planNameValue" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
